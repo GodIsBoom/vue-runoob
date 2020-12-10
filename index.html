@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>vue-runoob</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <div id="input">
+      <ol>
+        <li v-for="site in sites">
+          {{site.name}}</br>
+          -----
+        </li>
+      </ol>
+      <input type="text" v-model="msg">
+      <p>{{msg}}</p>
+      <p v-if="msg == '我是傻逼'">口令正确!</p>
+    </div>
+    <script>
+      new Vue({
+        el:'#input',
+        data() {
+          return {
+            msg: '',
+            sites:[
+              {name: 'gxk'},
+              {name: 'jkl'},
+              {name: 'sb'}
+            ]
+          }
+        },
+      })
+    </script>
+  </body>
+</html>
